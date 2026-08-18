@@ -105,21 +105,21 @@ class BirthdayApp {
     // ========================= //
     showMusicNotification() {
         const notification = document.getElementById('musicNotification');
-        const notificationBtn = document.getElementById('notificationMusicBtn');
+        const closeBtn = document.getElementById('closeNotification');
         
         if (notification) {
             notification.classList.remove('hidden');
         }
         
-        if (notificationBtn) {
-            notificationBtn.addEventListener('click', () => this.toggleMusic());
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => this.hideMusicNotification());
         }
     }
 
     hideMusicNotification() {
         const notification = document.getElementById('musicNotification');
         if (notification) {
-            notification.style.animation = 'fadeOut 0.3s ease-out forwards';
+            notification.style.animation = 'slideOutUp 0.3s ease-out forwards';
             setTimeout(() => {
                 notification.classList.add('hidden');
                 notification.style.animation = '';
