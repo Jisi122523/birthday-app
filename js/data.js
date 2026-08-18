@@ -72,7 +72,7 @@ const APP_DATA = {
         
         food: `<strong>🍜 Food Trips</strong><br><br>Endless food trips together! Trying new restaurants, discovering hidden gems, late-night snacks, cooking together. Food tastes better when I'm with you. Let's make this a lifetime adventure. 🍜`,
         
-        rides: `<strong>🚗 Rides Together</strong><br><br>Long drives with good music and better company. Just you and me, the open road, and all our dreams ahead. Some of my best memories are our car rides. 🚗`,
+        rides: `<strong>🚗 Rides Together</strong><br><br>Long drives with good music and better company. Just you and me, the open road, and all our dreams ahead. Some of my best memories are our motor rides. 🏍️`,
         
         family: `<strong>👨‍👩‍👧 Our Family</strong><br><br>I dream of building a beautiful family with you. Creating traditions, making memories, and raising happy, loved children. A family full of warmth and joy. 💕`,
         
