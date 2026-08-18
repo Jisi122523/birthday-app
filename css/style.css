@@ -390,7 +390,7 @@ strong {
     box-shadow: 0 4px 20px rgba(155, 89, 182, 0.2);
     animation: slideUp 0.6s ease-out;
     position: relative;
-    aspect-ratio: 1;
+    aspect-ratio: 16/9;
     background: #f5f5f5;
 }
 
@@ -415,9 +415,10 @@ strong {
 
 .memory-video {
     width: 100%;
-    height: auto;
+    height: 100%;
     background: #000;
     border-radius: 10px;
+    object-fit: contain;
 }
 
 /* Image counter for gallery */
