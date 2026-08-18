@@ -188,6 +188,13 @@ class BirthdayApp {
                 btn.setAttribute('type', 'button');
             }
         });
+
+        // Add sound effects to button clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON' && soundManager) {
+                soundManager.playBeep('click');
+            }
+        });
     }
 
     // ========================= //

@@ -74,6 +74,19 @@ class Navigator {
             // Scroll to top
             targetScreen.scrollTop = 0;
 
+            // Update progress bar
+            this.updateProgress(screenId);
+
+            // Trigger sound effect
+            if (window.soundManager) {
+                soundManager.playSound('transition');
+            }
+
+            // Create floating hearts on romantic screens
+            if (window.effectsManager) {
+                effectsManager.triggerHearts(screenId);
+            }
+
             // Trigger any screen-specific initialization
             this.onScreenEnter(screenId);
         }
@@ -133,6 +146,20 @@ class Navigator {
                 counterElement.textContent = '1 of 5';
             }
         }
+
+        // Special effects for birthday screen
+        if (screenId === 'birthday' && effects) {
+            // Play celebration sound
+            if (soundManager) {
+                soundManager.playBeep('confetti');
+            }
+            // Trigger confetti
+            setTimeout(() => {
+                effects.createConfetti(window.innerWidth / 2, window.innerHeight / 2);
+                effects.createConfetti(window.innerWidth / 4, window.innerHeight / 3);
+                effects.createConfetti((window.innerWidth * 3) / 4, window.innerHeight / 2.5);
+            }, 300);
+        }
     }
 
     /**
@@ -147,6 +174,25 @@ class Navigator {
      */
     isOnFinalScreen() {
         return this.currentScreen === 'ending';
+    }
+
+    /**
+     * Update progress bar based on current screen
+     */
+    updateProgress(screenId) {
+        const screenIndex = this.screenOrder.indexOf(screenId);
+        const totalScreens = this.screenOrder.length;
+        const percentage = ((screenIndex + 1) / totalScreens) * 100;
+        
+        const progressBar = document.getElementById('progressBar');
+        const screenCounter = document.getElementById('screenCounter');
+        
+        if (progressBar) {
+            progressBar.style.width = percentage + '%';
+        }
+        if (screenCounter) {
+            screenCounter.textContent = screenIndex + 1;
+        }
     }
 
     /**

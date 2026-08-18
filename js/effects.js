@@ -332,12 +332,30 @@ class Effects {
                     flame.style.animation = 'none';
                     flame.style.opacity = '0';
                 }
+                // Play sound effect for each candle
+                if (soundManager) {
+                    soundManager.playBeep('click');
+                }
             }, index * 50);
         });
         
         // Create confetti celebration after all candles blown
         setTimeout(() => {
             this.createConfetti(window.innerWidth / 2, window.innerHeight / 2);
+            
+            // Play celebration sound
+            if (soundManager) {
+                soundManager.playBeep('confetti');
+            }
+            
+            // Create floating hearts
+            if (effectsManager) {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        effectsManager.createFloatingHeart();
+                    }, i * 100);
+                }
+            }
             
             // Update button text and navigate
             const blowButton = document.getElementById('blowButton');
@@ -455,6 +473,120 @@ class Effects {
     }
 }
 
+// ========================= //
+// EFFECTS MANAGER - Floating Hearts, Confetti, etc. //
+// ========================= //
+class EffectsManager {
+    constructor() {
+        this.romanticScreens = ['welcome', 'letter', 'love', 'open-when', 'future', 'final-letter', 'ending'];
+    }
+
+    /**
+     * Trigger floating hearts on romantic screens
+     */
+    triggerHearts(screenId) {
+        if (this.romanticScreens.includes(screenId)) {
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    this.createFloatingHeart();
+                }, i * 200);
+            }
+        }
+    }
+
+    /**
+     * Create a single floating heart
+     */
+    createFloatingHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.textContent = '❤️';
+        
+        // Random position
+        const randomX = Math.random() * (window.innerWidth - 40);
+        const randomY = window.innerHeight - 100;
+        
+        heart.style.left = randomX + 'px';
+        heart.style.top = randomY + 'px';
+        heart.style.opacity = '0.8';
+        
+        document.body.appendChild(heart);
+        
+        // Remove after animation
+        setTimeout(() => heart.remove(), 3000);
+    }
+}
+
+// ========================= //
+// SOUND MANAGER - Handle sound effects //
+// ========================= //
+class SoundManager {
+    constructor() {
+        this.sounds = {};
+        this.enabled = true;
+        this.volume = 0.3;
+    }
+
+    /**
+     * Play a sound effect
+     */
+    playSound(soundName) {
+        if (!this.enabled) return;
+        
+        // Create simple beep sounds if audio files don't exist
+        this.playBeep(soundName);
+    }
+
+    /**
+     * Play a web audio beep effect
+     */
+    playBeep(type = 'default') {
+        try {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            
+            oscillator.connect(gain);
+            gain.connect(audioContext.destination);
+            
+            gain.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+            
+            switch(type) {
+                case 'transition':
+                    oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
+                    oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.05);
+                    break;
+                case 'click':
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                    break;
+                case 'confetti':
+                    oscillator.frequency.setValueAtTime(1046.5, audioContext.currentTime); // C6
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05);
+                    break;
+                default:
+                    oscillator.frequency.setValueAtTime(440, audioContext.currentTime); // A4
+            }
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.1);
+        } catch(e) {
+            // Web Audio API not supported, silently fail
+        }
+    }
+
+    /**
+     * Disable/enable sound effects
+     */
+    setSoundEnabled(enabled) {
+        this.enabled = enabled;
+    }
+}
+
+// Create global instances
+let effectsManager;
+let soundManager;
+
 // Create global effects instance
 let effects;
 
@@ -462,7 +594,11 @@ let effects;
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         effects = new Effects();
+        effectsManager = new EffectsManager();
+        soundManager = new SoundManager();
     });
 } else {
     effects = new Effects();
+    effectsManager = new EffectsManager();
+    soundManager = new SoundManager();
 }
