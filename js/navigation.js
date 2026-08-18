@@ -18,6 +18,7 @@ class Navigator {
             'open-when',
             'quiz',
             'future',
+            'cake',
             'video',
             'birthday',
             'final-letter',

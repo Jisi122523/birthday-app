@@ -18,6 +18,7 @@ class Effects {
         this.setupFutureButtons();
         this.setupQuizButtons();
         this.setupMemoryGallery();
+        this.setupCakeButton();
         this.loadQuizQuestion();
     }
 
@@ -290,6 +291,69 @@ class Effects {
                 navigator.goToScreen('future');
             }
         }
+    }
+
+    // ========================= //
+    // CAKE & CANDLES //
+    // ========================= //
+    setupCakeButton() {
+        const blowButton = document.getElementById('blowButton');
+        if (blowButton) {
+            blowButton.addEventListener('click', () => this.blowOutCandles());
+        }
+    }
+
+    blowOutCandles() {
+        // Get all candles
+        const candles = document.querySelectorAll('.candle');
+        
+        // Create wind effect
+        const container = document.querySelector('.cake-container');
+        if (container) {
+            const wind = document.createElement('div');
+            wind.className = 'wind-effect';
+            wind.style.position = 'absolute';
+            wind.style.top = '50px';
+            wind.style.left = '50%';
+            wind.style.transform = 'translateX(-50%)';
+            container.appendChild(wind);
+            
+            // Remove wind effect after animation
+            setTimeout(() => wind.remove(), 800);
+        }
+        
+        // Blow out each candle with staggered timing
+        candles.forEach((candle, index) => {
+            setTimeout(() => {
+                candle.classList.add('blown');
+                // Add sparkle/light effect
+                const flame = candle.querySelector('.candle-flame');
+                if (flame) {
+                    flame.style.animation = 'none';
+                    flame.style.opacity = '0';
+                }
+            }, index * 50);
+        });
+        
+        // Create confetti celebration after all candles blown
+        setTimeout(() => {
+            this.createConfetti(window.innerWidth / 2, window.innerHeight / 2);
+            
+            // Update button text and navigate
+            const blowButton = document.getElementById('blowButton');
+            if (blowButton) {
+                blowButton.textContent = 'NEXT →';
+                blowButton.className = 'next-button';
+                blowButton.setAttribute('data-next', 'video');
+                
+                // Now clicking will navigate to next screen
+                setTimeout(() => {
+                    if (navigator) {
+                        navigator.goToScreen('video');
+                    }
+                }, 1000);
+            }
+        }, 300);
     }
 
     // ========================= //

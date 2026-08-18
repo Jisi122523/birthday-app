@@ -514,6 +514,180 @@ strong {
 }
 
 /* ========================= */
+/* CAKE & CANDLES */
+/* ========================= */
+.cake-container {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 30px auto;
+    perspective: 1000px;
+}
+
+.cake {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 120px;
+}
+
+.cake-layer {
+    width: 280px;
+    height: 80px;
+    background: linear-gradient(to bottom, #c85a54 0%, #b24d46 100%);
+    border-radius: 10px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.cake-layer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+}
+
+.cake-frosting {
+    position: absolute;
+    bottom: 0;
+    width: 280px;
+    height: 40px;
+    background: linear-gradient(to bottom, #f5a9a3 0%, #e09090 100%);
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Candles Group */
+.candles-group {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Individual Candle */
+.candle {
+    position: relative;
+    width: 30px;
+    height: 80px;
+    animation: flicker 2s ease-in-out infinite;
+}
+
+.candle.blown .candle-flame {
+    animation: none !important;
+    opacity: 0;
+}
+
+.candle-stick {
+    width: 6px;
+    height: 50px;
+    background: linear-gradient(to bottom, #ffe6cc 0%, #ffd9b3 100%);
+    margin: 0 auto;
+    border-radius: 3px;
+    box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.candle-flame {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 25px;
+    background: linear-gradient(to top, #ffaa00 0%, #ffff00 50%, #ff6b00 100%);
+    border-radius: 50% 50% 50% 40%;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.8);
+    animation: flicker 2s ease-in-out infinite;
+}
+
+.candle-flame::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    width: 8px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+
+/* Flicker animation for candles */
+@keyframes flicker {
+    0%, 100% {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(-52%) scaleY(1.05);
+        opacity: 0.95;
+    }
+    50% {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(-51%) scaleY(1.02);
+        opacity: 0.98;
+    }
+}
+
+/* Blow out animation */
+@keyframes blow {
+    0% {
+        transform: translateX(-50%) translateY(0) scaleY(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px) scaleY(1.1);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-30px) scaleY(0);
+        opacity: 0;
+    }
+}
+
+@keyframes windBlow {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px) translateY(0) scaleX(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100px) translateY(-20px) scaleX(1);
+    }
+}
+
+.wind-effect {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    pointer-events: none;
+}
+
+.wind-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    animation: windBlow 0.8s ease-out forwards;
+}
+
+/* ========================= */
 /* ACCESSIBILITY */
 /* ========================= */
 button:focus {
