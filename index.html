@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Joyjoy ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Navigation -->
+
+        <header class="top-bar">
+
+            <button
+                id="backButton"
+                class="icon-button">
+
+                ←
+
+            </button>
+
+            <button
+                id="musicButton"
+                class="icon-button">
+
+                ♫
+
+            </button>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- Welcome -->
+        <!-- ========================= -->
+
+        <section
+            id="welcome"
+            class="screen active">
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <h1>
+                Happy<br>
+                Birthday
+            </h1>
+
+            <h2>
+                JOYJOY
+            </h2>
+
+            <p>
+                I made something special just for you.
+            </p>
+
+            <button
+                class="next-button"
+                data-next="letter">
+
+                TAP ME 💌
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Letter -->
+        <!-- ========================= -->
+
+        <section
+            id="letter"
+            class="screen">
+
+            <h2>
+                Letter #1 💌
+            </h2>
+
+            <div class="card">
+
+                <p>
+
+                    <strong>Hi, my lablab.</strong>
+
+                    <br><br>
+
+                    Happy Birthday, Jeysii! 🎂
+
+                    <br><br>
+
+                    I know I can't be there with you in person today,
+                    so I made this little world for you instead.
+
+                    <br><br>
+
+                    Every tap is a little piece of my heart.
+
+                </p>
+
+            </div>
+
+            <button
+                class="next-button"
+                data-next="gift">
+
+                NEXT →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Gift -->
+        <!-- ========================= -->
+
+        <section
+            id="gift"
+            class="screen">
+
+            <div class="heart">
+                🎁
+            </div>
+
+            <h2>
+                Surprise!
+            </h2>
+
+            <p>
+                You found a gift.
+                But there's only one way to find out what's inside.
+            </p>
+
+            <button
+                class="next-button"
+                data-next="photo">
+
+                OPEN GIFT 🎁
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Memory Photo -->
+        <!-- ========================= -->
+
+        <section
+            id="photo"
+            class="screen">
+
+            <h2>
+                It's for you, Joyjoy ❤️
+            </h2>
+
+            <div class="memory">
+
+                <img
+                    src="assets/images/image1.jpg"
+                    alt="Favorite memory"
+                    class="memory-image">
+
+            </div>
+
+            <p>
+
+                Because you're one of the greatest gifts
+                in my life.
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="story">
+
+                CONTINUE →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Story -->
+        <!-- ========================= -->
+
+        <section
+            id="story"
+            class="screen">
+
+            <h2>
+                Our Story
+            </h2>
+
+            <p>
+
+                We met through an online app.
+
+                <br><br>
+
+                Who would've thought one random connection
+                would become something this important to me?
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="timeline">
+
+                START OUR STORY →
+
+            </button>
+
+        </section>
+
+               <!-- ========================= -->
+        <!-- Timeline -->
+        <!-- ========================= -->
+
+        <section
+            id="timeline"
+            class="screen">
+
+            <h2>
+                30 Months of Us ❤️
+            </h2>
+
+            <div class="card">
+
+                <p>
+
+                    <strong>Month 1</strong><br>
+                    Getting to know each other.
+
+                    <br><br>
+
+                    <strong>Month 6</strong><br>
+                    More laughs. More talks.
+
+                    <br><br>
+
+                    <strong>Month 12</strong><br>
+                    Falling deeper in love.
+
+                    <br><br>
+
+                    <strong>Month 20</strong><br>
+                    Stronger together through everything.
+
+                    <br><br>
+
+                    <strong>Month 30</strong><br>
+                    Still us.
+                    Still choosing each other every day.
+
+                </p>
+
+            </div>
+
+            <button
+                class="next-button"
+                data-next="memories">
+
+                NEXT →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Memories -->
+        <!-- ========================= -->
+
+        <section
+            id="memories"
+            class="screen">
+
+            <h2>
+                Our Memories 📸
+            </h2>
+
+            <div class="memory" id="memoryGallery">
+
+                <img
+                    id="memoryImageElement"
+                    src="assets/images/image2.jpg"
+                    alt="Memory"
+                    class="memory-image">
+
+                <div class="image-counter" id="imageCounter">1 of 5</div>
+
+            </div>
+
+            <p>
+
+                Food trips.
+                Rides.
+                Sleeping together.
+
+                <br><br>
+
+                The little moments that became our memories.
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="love">
+
+                NEXT MEMORY →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Things I Love -->
+        <!-- ========================= -->
+
+        <section
+            id="love"
+            class="screen">
+
+            <h2>
+
+                Things I Love About You ❤️
+
+            </h2>
+
+            <div class="grid">
+
+                <button
+                    class="tile reveal-button"
+                    data-message="sweet">
+
+                    Sweet 🍭
+
+                </button>
+
+                <button
+                    class="tile reveal-button"
+                    data-message="caring">
+
+                    Caring 🤍
+
+                </button>
+
+                <button
+                    class="tile reveal-button"
+                    data-message="funny">
+
+                    Funny 😂
+
+                </button>
+
+                <button
+                    class="tile reveal-button"
+                    data-message="smart">
+
+                    Smart 🧠
+
+                </button>
+
+                <button
+                    class="tile reveal-button"
+                    data-message="loving">
+
+                    Loving ❤️
+
+                </button>
+
+            </div>
+
+            <p
+                id="loveMessage"
+                class="small-text">
+
+                Tap each one.
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="open-when">
+
+                NEXT →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Open When -->
+        <!-- ========================= -->
+
+        <section
+            id="open-when"
+            class="screen">
+
+            <h2>
+
+                Open When... 💌
+
+            </h2>
+
+            <p>
+
+                Tap the envelope you need.
+
+            </p>
+
+            <div class="grid">
+
+                <button
+                    class="tile note-button"
+                    data-note="miss">
+
+                    💌 When you miss me
+
+                </button>
+
+                <button
+                    class="tile note-button"
+                    data-note="sad">
+
+                    🌧️ When you're sad
+
+                </button>
+
+                <button
+                    class="tile note-button"
+                    data-note="angry">
+
+                    😤 When you're angry
+
+                </button>
+
+                <button
+                    class="tile note-button"
+                    data-note="sleep">
+
+                    🌙 When you can't sleep
+
+                </button>
+
+                <button
+                    class="tile note-button"
+                    data-note="love">
+
+                    ❤️ When you need love
+
+                </button>
+
+            </div>
+
+            <p
+                id="noteMessage"
+                class="small-text">
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="quiz">
+
+                NEXT →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Quiz -->
+        <!-- ========================= -->
+
+        <section
+            id="quiz"
+            class="screen">
+
+            <h2>
+
+                A Little Game ✨
+
+            </h2>
+
+            <p>
+
+                <strong id="quizQuestion">How well do you know us?</strong>
+
+            </p>
+
+            <div id="quizAnswersContainer"></div>
+
+            <p
+                id="quizResult"
+                class="small-text">
+
+            </p>
+
+            <p
+                id="quizProgress"
+                class="small-text"
+                style="font-size: 12px; margin-top: 10px;">
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="future">
+
+                NEXT →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Future -->
+        <!-- ========================= -->
+
+        <section
+            id="future"
+            class="screen">
+
+            <h2>
+
+                Our Future 🌈
+
+            </h2>
+
+            <p>
+
+                Tap to discover what I dream about with you.
+
+            </p>
+
+            <div class="grid">
+
+                <button class="tile future-button" data-future="home">
+                    🏡 Our Home
+                </button>
+
+                <button class="tile future-button" data-future="food">
+                    🍜 Food Trips
+                </button>
+
+                <button class="tile future-button" data-future="rides">
+                    🚗 Rides
+                </button>
+
+                <button class="tile future-button" data-future="family">
+                    👨‍👩‍👧 Family
+                </button>
+
+                <button class="tile future-button" data-future="success">
+                    💰 Success
+                </button>
+
+                <button class="tile future-button" data-future="adventure">
+                    ✈️ Adventures
+                </button>
+
+            </div>
+
+            <p
+                id="futureMessage"
+                class="small-text">
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="video">
+
+                NEXT →
+
+            </button>
+
+        </section>
+
+    </div>
+            <!-- ========================= -->
+        <!-- Video -->
+        <!-- ========================= -->
+
+        <section
+            id="video"
+            class="screen">
+
+            <h2>
+                Final Surprise 🎂
+            </h2>
+
+            <p>
+                I have a little video message for you.
+            </p>
+
+            <div class="memory">
+
+                <video
+                    class="memory-video"
+                    controls>
+
+                    <source
+                        src="assets/videos/birthday.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support video playback.
+
+                </video>
+
+            </div>
+
+            <button
+                class="next-button"
+                data-next="birthday">
+
+                PLAY / CONTINUE ▶
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Birthday -->
+        <!-- ========================= -->
+
+        <section
+            id="birthday"
+            class="screen">
+
+            <div class="heart">
+                💗
+            </div>
+
+            <h1>
+
+                HAPPY BIRTHDAY,
+                <br>
+                JOYJOY!
+
+            </h1>
+
+            <p>
+
+                30 months down.
+
+                <br><br>
+
+                A lifetime to go.
+
+            </p>
+
+            <button
+                class="next-button"
+                data-next="final-letter">
+
+                ONE LAST THING ❤️
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Final Letter -->
+        <!-- ========================= -->
+
+        <section
+            id="final-letter"
+            class="screen">
+
+            <h2>
+
+                To My Joyjoy,
+
+            </h2>
+
+            <div class="card">
+
+                <p>
+
+                    Thank you for
+                    30 beautiful months
+                    of love,
+                    laughter,
+                    and endless memories.
+
+                    <br><br>
+
+                    Thank you for being sweet,
+                    caring,
+                    funny,
+                    smart,
+                    and so loving.
+
+                    <br><br>
+
+                    Thank you for choosing me,
+                    even on our hard days.
+
+                    <br><br>
+
+                    I want more food trips,
+                    more rides,
+                    more nights together,
+                    more laughter,
+                    and more love.
+
+                    <br><br>
+
+                    I want us to build
+                    a healthy family
+                    and become successful together.
+
+                    <br><br>
+
+                    Someday,
+                    I want to look back and say,
+
+                    <br><br>
+
+                    <strong>
+
+                        "We actually made it."
+
+                    </strong>
+
+                    <br><br>
+
+                    I love you,
+                    lablab.
+
+                    Always. ❤️
+
+                </p>
+
+            </div>
+
+            <button
+                class="next-button"
+                data-next="ending">
+
+                FINISH →
+
+            </button>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Ending -->
+        <!-- ========================= -->
+
+        <section
+            id="ending"
+            class="screen">
+
+            <h1>
+
+                30 MONTHS
+                <br>
+                &amp; COUNTING...
+
+            </h1>
+
+            <p>
+
+                I'll be here,
+                loving you today,
+                tomorrow,
+                and for all our tomorrows.
+
+            </p>
+
+            <div class="heart">
+
+                ❤️
+
+            </div>
+
+            <p>
+
+                <strong>
+
+                    THE END —
+                    OR JUST THE BEGINNING.
+
+                </strong>
+
+            </p>
+
+        </section>
+
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
+
+    <script src="js/data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
