@@ -392,10 +392,8 @@ strong {
     position: relative;
     aspect-ratio: 16/9;
     background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 @keyframes slideUp {
@@ -423,6 +421,7 @@ strong {
     background: #000;
     border-radius: 8px;
     display: block;
+    object-fit: contain;
 }
 
 /* Image counter for gallery */
