@@ -108,6 +108,7 @@ body {
     padding: 30px 20px;
     text-align: center;
     overflow-y: auto;
+    min-height: 0;
     animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -392,8 +393,9 @@ strong {
     position: relative;
     aspect-ratio: 16/9;
     background: #ffffff;
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
+    min-width: 280px;
 }
 
 @keyframes slideUp {
