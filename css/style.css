@@ -462,6 +462,16 @@ strong {
     html, body {
         width: 100vw;
         height: 100vh;
+        display: block;
+    }
+    
+    body {
+        display: block;
+        align-items: auto;
+        justify-content: auto;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
     }
     
     .app {
@@ -470,6 +480,7 @@ strong {
         max-width: 100vw;
         max-height: 100vh;
         border-radius: 0;
+        box-shadow: none;
     }
     
     h1 {
