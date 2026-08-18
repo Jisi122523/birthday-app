@@ -172,6 +172,22 @@ p {
     min-height: 20px;
 }
 
+#noteMessage {
+    width: 100%;
+    display: block;
+    clear: both;
+    float: none;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+#open-when .next-button {
+    display: block;
+    clear: both;
+    float: none;
+    margin: 10px auto 0;
+}
+
 strong {
     color: var(--primary);
     font-weight: 600;
