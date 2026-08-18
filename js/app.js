@@ -19,6 +19,9 @@ class BirthdayApp {
         this.setupSpecialEffects();
         this.setupAccessibility();
         
+        // Show music notification
+        this.showMusicNotification();
+        
         console.log('✅ Birthday App Ready!');
     }
 
@@ -84,6 +87,8 @@ class BirthdayApp {
                             musicButton.title = '🔊 Music: On';
                             musicButton.classList.add('music-playing');
                         }
+                        // Hide notification when music is turned on
+                        this.hideMusicNotification();
                     })
                     .catch(error => {
                         console.log('Audio playback failed:', error);
@@ -92,6 +97,33 @@ class BirthdayApp {
                         }
                     });
             }
+        }
+    }
+
+    // ========================= //
+    // MUSIC NOTIFICATION //
+    // ========================= //
+    showMusicNotification() {
+        const notification = document.getElementById('musicNotification');
+        const notificationBtn = document.getElementById('notificationMusicBtn');
+        
+        if (notification) {
+            notification.classList.remove('hidden');
+        }
+        
+        if (notificationBtn) {
+            notificationBtn.addEventListener('click', () => this.toggleMusic());
+        }
+    }
+
+    hideMusicNotification() {
+        const notification = document.getElementById('musicNotification');
+        if (notification) {
+            notification.style.animation = 'fadeOut 0.3s ease-out forwards';
+            setTimeout(() => {
+                notification.classList.add('hidden');
+                notification.style.animation = '';
+            }, 300);
         }
     }
 

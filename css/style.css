@@ -98,6 +98,79 @@ body {
 }
 
 /* ========================= */
+/* MUSIC NOTIFICATION */
+/* ========================= */
+.music-notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.music-notification.hidden {
+    display: none;
+}
+
+.notification-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 0.5s ease-out;
+}
+
+.notification-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.notification-content h3 {
+    font-size: 24px;
+    color: var(--primary);
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.notification-content p {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+    line-height: 1.5;
+}
+
+.notification-button {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+}
+
+.notification-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(155, 89, 182, 0.5);
+}
+
+.notification-button:active {
+    transform: scale(0.95);
+}
+
+/* ========================= */
 /* SCREENS / SECTIONS */
 /* ========================= */
 .screen {
